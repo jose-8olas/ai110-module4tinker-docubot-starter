@@ -68,6 +68,203 @@ These instructions help reduce unsupported answers and make responses more trace
 
 ## 4. Experiments and Comparisons
 
+```text
+  1) Naive LLM over full docs (no retrieval)
+  2) Retrieval only (no LLM)
+  3) RAG (retrieval + LLM)
+  q) Quit
+Enter choice: 1
+
+Press Enter to run built in sample queries.
+Or type a single custom query: How are access tokens generated?
+
+Running naive LLM mode on custom query...
+
+============================================================
+Question: How are access tokens generated?
+
+Answer:
+Access tokens are typically generated through an authentication flow (such as OAuth 2.0 or OpenID Connect) after a user or client successfully provides valid credentials (like a username and password, or an API key).
+
+Once the credentials are authenticated by the authorization server, the server cryptographically signs and issues a token—often formatted as a JSON Web Token (JWT)—that contains claims about the user's identity and permissions, along with an expiration time.
+
+*(Note: Since you didn't specify the exact platform or technology stack you are working with, this is a general overview. If you need details for a specific tool, framework, or service, please let me know!)*
+
+Choose a mode:
+  1) Naive LLM over full docs (no retrieval)
+  2) Retrieval only (no LLM)
+  3) RAG (retrieval + LLM)
+  q) Quit
+Enter choice: 2
+
+Press Enter to run built in sample queries.
+Or type a single custom query: How are access tokens generated?
+
+Running retrieval only mode on custom query...
+
+============================================================
+Question: How are access tokens generated?
+
+Retrieved snippets:
+[AUTH.md]
+The application uses a simple token based system. Every request to a protected endpoint must include a valid access token in the Authorization header. Tokens are short lived and tied to a single user.
+
+---
+[AUTH.md]
+- `AUTH_SECRET_KEY`
+  A secret string used to sign all access tokens. Must be long and unpredictable.
+
+---
+[SETUP.md]
+- `TOKEN_LIFETIME_SECONDS`
+Controls how long access tokens remain valid.
+
+
+Choose a mode:
+  1) Naive LLM over full docs (no retrieval)
+  2) Retrieval only (no LLM)
+  3) RAG (retrieval + LLM)
+  q) Quit
+Enter choice: 3
+
+Press Enter to run built in sample queries.
+Or type a single custom query: How are access tokens generated?
+
+Running RAG mode on custom query...
+
+============================================================
+Question: How are access tokens generated?
+
+Answer:
+I do not know based on the docs I have.
+
+Choose a mode:
+  1) Naive LLM over full docs (no retrieval)
+  2) Retrieval only (no LLM)
+  3) RAG (retrieval + LLM)
+  q) Quit
+Enter choice: 1
+
+Press Enter to run built in sample queries.
+Or type a single custom query: Which endpoint returns all users?
+
+Running naive LLM mode on custom query...
+
+============================================================
+Question: Which endpoint returns all users?
+
+Answer:
+To tell you which endpoint returns all users, I need a bit more context. Could you please provide the API documentation, specifications, or codebase you are working with? Once you share that, I'll be happy to find the correct endpoint for you!
+
+Choose a mode:
+  1) Naive LLM over full docs (no retrieval)
+  2) Retrieval only (no LLM)
+  3) RAG (retrieval + LLM)
+  q) Quit
+Enter choice: 2
+
+Press Enter to run built in sample queries.
+Or type a single custom query: Which endpoint returns all users?
+
+Running retrieval only mode on custom query...
+
+============================================================
+Question: Which endpoint returns all users?
+
+Retrieved snippets:
+[API_REFERENCE.md]
+Returns a list of all users. Only accessible to admins.
+
+---
+[API_REFERENCE.md]
+Authenticates a user and returns a short lived access token.
+
+---
+[API_REFERENCE.md]
+* Returns 401 if credentials are invalid.
+* The token must be included in the Authorization header for protected endpoints.
+
+
+Choose a mode:
+  1) Naive LLM over full docs (no retrieval)
+  2) Retrieval only (no LLM)
+  3) RAG (retrieval + LLM)
+  q) Quit
+Enter choice: 3
+
+Press Enter to run built in sample queries.
+Or type a single custom query: Which endpoint returns all users?
+
+Running RAG mode on custom query...
+
+============================================================
+Question: Which endpoint returns all users?
+
+Answer:
+Based on the provided documentation, I do not know based on the docs I have which specific endpoint returns all users, only that there is a function that returns a list of all users and that it is only accessible to admins.
+
+Files relied on: `API_REFERENCE.md`
+
+Choose a mode:
+  1) Naive LLM over full docs (no retrieval)
+  2) Retrieval only (no LLM)
+  3) RAG (retrieval + LLM)
+  q) Quit
+Enter choice: 1
+
+Press Enter to run built in sample queries.
+Or type a single custom query: What is the best pizza restaurant?
+
+Running naive LLM mode on custom query...
+
+============================================================
+Question: What is the best pizza restaurant?
+
+Answer:
+As a documentation assistant, I do not have personal preferences, personal tastes, or real-time local data to determine the "best" pizza restaurant.
+
+"Best" is subjective and depends entirely on your location, dietary preferences (e.g., gluten-free, vegan), and styleof pizza (e.g., Neapolitan, New York-style, Chicago deep-dish).
+
+If you are looking for recommendations, I recommend checking local review platforms such as Yelp, Google Maps, or TripAdvisor, filtered by your current location.
+
+Choose a mode:
+  1) Naive LLM over full docs (no retrieval)
+  2) Retrieval only (no LLM)
+  3) RAG (retrieval + LLM)
+  q) Quit
+Enter choice: 2
+
+Press Enter to run built in sample queries.
+Or type a single custom query: What is the best pizza restaurant?
+
+Running retrieval only mode on custom query...
+
+============================================================
+Question: What is the best pizza restaurant?
+
+Retrieved snippets:
+I do not know based on these docs.
+
+Choose a mode:
+  1) Naive LLM over full docs (no retrieval)
+  2) Retrieval only (no LLM)
+  3) RAG (retrieval + LLM)
+  q) Quit
+Enter choice: 3
+
+Press Enter to run built in sample queries.
+Or type a single custom query: What is the best pizza restaurant?
+
+Running RAG mode on custom query...
+
+============================================================
+Question: What is the best pizza restaurant?
+
+Answer:
+I do not know based on these docs.
+
+```
+
 The same three queries were tested in all three modes.
 
 | Query                              | Naive LLM: helpful or harmful?                                                                                                | Retrieval only: helpful or harmful?                                                                                                           | RAG: helpful or harmful?                                                                                                     | Notes                                                                                     |
