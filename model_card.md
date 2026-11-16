@@ -68,7 +68,10 @@ These instructions help reduce unsupported answers and make responses more trace
 
 ## 4. Experiments and Comparisons
 
+RESULTS
+
 ```text
+Choose a mode:
   1) Naive LLM over full docs (no retrieval)
   2) Retrieval only (no LLM)
   3) RAG (retrieval + LLM)
