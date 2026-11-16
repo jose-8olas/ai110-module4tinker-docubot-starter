@@ -17,7 +17,7 @@ from google import genai
 
 # Central place to update the model name if needed.
 # You can swap this for a different Gemini model in the future.
-GEMINI_MODEL_NAME = "gemini-flash-lite-latest"
+GEMINI_MODEL_NAME = "gemini-3.5-flash-lite"
 
 
 class GeminiClient:
@@ -46,9 +46,12 @@ class GeminiClient:
     # -----------------------------------------------------------
 
     def naive_answer_over_full_docs(self, query, all_text):
-        # We ignore all_text and send a generic prompt instead
         prompt = f"""
-    You are a documentation assistant. 
+    You are a documentation assistant.
+
+    Here is the full documentation:
+    {all_text}
+
     Answer this developer question: {query}
     """
         try:
@@ -59,7 +62,6 @@ class GeminiClient:
             return (response.text or "").strip()
         except Exception as e:
             return f"Unable to generate an answer. ({type(e).__name__}: {e})"
-
     # -----------------------------------------------------------
     # Phase 2: RAG style generation over retrieved snippets
     # -----------------------------------------------------------

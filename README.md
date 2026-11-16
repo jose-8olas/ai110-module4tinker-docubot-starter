@@ -44,8 +44,8 @@ Start the program:
 
 Choose a mode:
 
-- **1**: Naive LLM (Gemini reads the full docs)  
-- **2**: Retrieval only (no LLM)  
+- **1**: Naive LLM (Gemini reads the full docs)
+- **2**: Retrieval only (no LLM)
 - **3**: RAG (retrieval + Gemini)
 
 You can use built in sample queries or type your own.
